@@ -16,9 +16,8 @@ def solve(G):
 	min_cost = float('inf')
 
 	# if by luck there's a node connecting to all other verts, return it 
-	all_degrees = G.degree(G.nodes) # dict of (node: deg) items
-	for node, deg in all_degrees:
-		if deg == nx.number_of_nodes(G) - 1:
+	for node in G.nodes:
+		if len(list(nx.neighbors(G, node))) == nx.number_of_nodes(G) - 1:
 			min_tree.add_node(node)
 			return min_tree
 
@@ -92,7 +91,7 @@ def greedy_find_min_tree(G, start_node):
 			neighbors =  nx.neighbors(G, node)
 			for neighbor_node in neighbors:
 				if (neighbor_node not in tree_nodes) :
-					temp_tree = tree
+					temp_tree = tree.copy()
 					edge_weight  = G[node][neighbor_node]['weight']
 					temp_tree.add_edge(node, neighbor_node)
 					temp_tree[node][neighbor_node]['weight'] = edge_weight
@@ -122,10 +121,10 @@ def greedy_find_min_tree(G, start_node):
 
 
 if __name__ == '__main__':
-    assert len(sys.argv) == 2
-    path = sys.argv[1]
-    G = read_input_file(path)
-    T = solve(G)
-    assert is_valid_network(G, T)
-    print("Average  pairwise distance: {}".format(average_pairwise_distance_fast(T)))
-    write_output_file(T, 'output/test.out')
+	assert len(sys.argv) == 2
+	path = sys.argv[1]
+	G = read_input_file(path)
+	T = solve(G)
+	assert is_valid_network(G, T)
+	print("Average  pairwise distance: {}".format(average_pairwise_distance_fast(T)))
+	write_output_file(T, 'output/test.out')
