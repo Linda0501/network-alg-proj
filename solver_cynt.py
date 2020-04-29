@@ -83,7 +83,7 @@ def greedy_find_min_tree(G, start_node):
 	reachable_nodes = {start_node}
 
 	#until found the first dominating set
-	while not nx.is_dominating_set(G, tree.nodes) :
+	while not nx.is_dominating_set(G, tree.nodes):
 		# update the min tree
 		min_tree = tree
 		min_cost = float('inf')
