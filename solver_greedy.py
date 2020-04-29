@@ -91,7 +91,6 @@ def greedy_find_min_tree(G, start_node):
 			neighbors =  nx.neighbors(G, node)
 			for neighbor_node in neighbors:
 				if (neighbor_node not in tree_nodes) :
-
 					temp_tree = tree.copy()
 					edge_weight  = G[node][neighbor_node]['weight']
 					temp_tree.add_edge(node, neighbor_node)

@@ -8,7 +8,7 @@ from utils import *
 # only run on small inputs
 if __name__ == "__main__":
 	output_dir = "output"
-	for input_path in glob.glob('inputs/small*.in'):
+	for input_path in glob.glob('inputs/large*.in'):
 		graph_name = input_path.split("/")[1] 
 		graph_name = graph_name.split(".")[0]
 		G = read_input_file(f"{input_path}")
