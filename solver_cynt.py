@@ -93,7 +93,7 @@ def greedy_find_min_tree(G, start_node):
 			for neighbor_node in neighbors:
 				if (neighbor_node not in tree_nodes) :
 					temp_tree = tree
-					edge_weight  = G[node][neighbor_node]['weight']
+					edge_weight = G[node][neighbor_node]['weight']
 					temp_tree.add_edge(node, neighbor_node)
 					temp_tree[node][neighbor_node]['weight'] = edge_weight
 					cost = average_pairwise_distance_fast(temp_tree)
