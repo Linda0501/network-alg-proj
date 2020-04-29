@@ -8,7 +8,7 @@ import queue
 
 def solve(G):
 	tree = nx.minimum_spanning_tree(G)
-	cost = average_pairwise_distance_fast(G, tree)
+	cost = average_pairwise_distance_fast(tree)
 
 	# max leaf heap containing (weight, leaf_edge) tuples
 	leaf_heap = queue.PriorityQueue()
@@ -35,7 +35,7 @@ def solve(G):
 			entry = (-leaf_weight, (leaf, leaf_neighbor))
 			if entry not in leaves_in_heap:
 				leaf_heap.put(entry)
-
+				leaves_in_heap.add(entry)
 		
 		heaviest = leaf_heap.get()
 		edge = heaviest[1]
