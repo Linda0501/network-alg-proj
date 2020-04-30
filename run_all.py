@@ -8,8 +8,8 @@ from utils import *
 
 # only run on s/m/l inputs
 if __name__ == "__main__":
-	output_dir = "output_trimMST"
-	cost_record = open("submission_meta/trimMST1_cost.txt", "a")
+	output_dir = "output_greedy2"
+	cost_record = open("submission_meta/greedy2_cost.txt", "a")
 
 	for input_path in glob.glob('inputs/large*.in'):
 		graph_name = input_path.split("/")[1] 
