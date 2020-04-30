@@ -7,6 +7,14 @@ import queue
 
 
 def solve(G):
+
+	# if by luck there's a node connecting to all other verts, return it immediately
+	for node in G.nodes:
+		if len(list(nx.neighbors(G, node))) == nx.number_of_nodes(G) - 1:
+			min_tree = nx.Graph()
+			min_tree.add_node(node)
+			return min_tree
+
 	tree = nx.minimum_spanning_tree(G)
 	cost = average_pairwise_distance_fast(tree)
 
@@ -19,7 +27,7 @@ def solve(G):
 	# or the tree is no longer dominating
 	while True:
 		# (node, degree) pairs
-		all_degrees = G.degree(G.nodes)
+		all_degrees = tree.degree(tree.nodes)
 		
 		# find all leaves
 		leaves = []
@@ -29,8 +37,9 @@ def solve(G):
 
 		# add leaves to PQ
 		for leaf in leaves:
-			leaf_neighbor = list(nx.neighbors(G, leaf))[0]
+			leaf_neighbor = list(nx.neighbors(tree, leaf))[0]
 			leaf_weight = G[leaf][leaf_neighbor]['weight']
+			
 			# negate weight to use minPQ as maxPQ
 			entry = (-leaf_weight, (leaf, leaf_neighbor))
 			if entry not in leaves_in_heap:
@@ -38,17 +47,19 @@ def solve(G):
 				leaves_in_heap.add(entry)
 		
 		heaviest = leaf_heap.get()
+		weight = -heaviest[0]
 		edge = heaviest[1]
 		tree.remove_edge(edge[0], edge[1])
+		tree.remove_node(edge[0])
 		# if removing the edge makes the tree non-dominating, put it back
 		if not nx.is_dominating_set(G, tree):
-			tree.add_edge(edge[0], edge[1])
+			tree.add_edge(edge[0], edge[1], weight=weight)
 			break
 
 		# if removing the edge results in greater cost, put it back
 		temp_cost = average_pairwise_distance_fast(tree)
 		if temp_cost > cost:
-			tree.add_edge(edge[0], edge[1])
+			tree.add_edge(edge[0], edge[1], weight=weight)
 			break
 
 		# the leaf is officially removed; update leaves set and cost
