@@ -2,7 +2,7 @@ from parse import *
 import networkx as nx
 import os
 import solver_greedy as greedy
-import solver_trimMST as trimMST
+import solver_greedy2 as solver
 import glob
 from utils import *
 
@@ -18,7 +18,7 @@ if __name__ == "__main__":
 		print("processing {}".format(graph_name))
 
 		G = read_input_file(f"{input_path}")
-		T = trimMST.solve(G)
+		T = solver.solve(G)
 		assert is_valid_network(G, T), "output for {} is invalid".format(graph_name)
 
 		cost = average_pairwise_distance_fast(T)

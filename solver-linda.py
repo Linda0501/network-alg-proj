@@ -118,7 +118,7 @@ def greedy_find_min_tree(G, start_node):
 
     #outside of while loop
     added = True
-    while (added) :
+    while added:
         #min_tree = tree
         #min_cost = float('inf')
         #min_node = None
@@ -138,7 +138,7 @@ def greedy_find_min_tree(G, start_node):
                         min_node = neighbor_node
                         added = True
 
-        if added :
+        if added:
             tree = min_tree
             tree_nodes.append(min_node)
             reachable_nodes = reachable_nodes | {min_node}
