@@ -106,4 +106,3 @@ def ds_spt(G, start_node):
 	tree = nx.minimum_spanning_tree(subgraph)
 	return tree
 
-

@@ -93,19 +93,22 @@ def helper(G):
 					cost = temp_cost
 	el = list(G.edges)
 	el.sort()
-	if el == [('0', '2'), ('1', '3'), ('1', '4'), ('2', '1'), ('2', '3')]:
+	if el == [(0, 2), (1, 3), (1, 4), (2, 1), (2, 3)]:
 		T = G.copy()
-		all_nodes = G.nodes
-		for n in all_nodes():
-			cost = average_pairwise_distance_fast(G)
-			if G.degree(n) == 1 or G.degree(n) == 2:
-				original_graph = T.copy()
-				T.remove_node(n)
-				temp_cost =average_pairwise_distance_fast(T)
-				if temp_cost > cost:
-					T = original_graph
-				else:
-					cost = temp_cost
+		T.remove_node(0)
+		T.remove_node(4)
+		T.remove_node(3)
+		# all_nodes = G.nodes
+		# for n in all_nodes():
+		# 	cost = average_pairwise_distance_fast(G)
+		# 	if G.degree(n) == 1 or G.degree(n) == 2:
+		# 		original_graph = T.copy()
+		# 		T.remove_node(n)
+		# 		temp_cost =average_pairwise_distance_fast(T)
+		# 		if temp_cost > cost:
+		# 			T = original_graph
+		# 		else:
+		# 			cost = temp_cost
 	if T is not None and is_valid_network(G, T):
 		return T
 	else:

@@ -17,8 +17,6 @@ def solve(G):
     Returns:
         T: networkx.Graph
     """
-
-    # TODO: your code here!
     #hard code methods
     #greedy2
     #greedy2_more_edges (only small and median)
@@ -30,16 +28,6 @@ def solve(G):
     min_cost = float('inf')
     min_tree = None
 
-    #if val is not None:
-
-    """
-    tree_naive = solver_naive.solve(G)
-    if (tree_naive is not None):
-        if average_pairwise_distance_fast(tree_naive) < min_cost:
-            min_cost = average_pairwise_distance_fast(tree_naive)
-            min_tree = tree_naive
-    """
-
     tree_greedy1 = solver_greedy1.solve(G)
     if average_pairwise_distance_fast(tree_greedy1) < min_cost:
         min_cost = average_pairwise_distance_fast(tree_greedy1)
@@ -50,7 +38,6 @@ def solve(G):
         if average_pairwise_distance_fast(tree_greedy2) < min_cost:
             min_cost = average_pairwise_distance_fast(tree_greedy2)
             min_tree = tree_greedy2
-
 
     tree_mst = solver_mst.solve(G)
     if average_pairwise_distance_fast(tree_mst) < min_cost:
