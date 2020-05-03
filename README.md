@@ -7,6 +7,10 @@ You'll only need to install networkx to work with the starter code. For installa
 Files:
 - `parse.py`: functions to read/write inputs and outputs
 - `solver.py`: calls all other solvers and return the optimal output
+  - `solver_greedy2.py`: a solver created using greedy algorithm
+  - `solver_greedy2_more_edges.py`: a solver created by modifiying solver_greedy2 to explore more edges in each iteration
+  - `solver_trimMST.py`: a solver created by trimming minimum spanning trees
+  - `solver_ds_spt.py`: a solver created by shortest paths tree
 - `utils.py`: contains functions to compute cost and validate NetworkX graphs
 
 Instructions to run the solver:
