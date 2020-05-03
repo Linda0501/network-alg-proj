@@ -13,4 +13,4 @@ Instructions to run the solver:
 1. `cd` into this project directory `network-alg-proj`
 2. Create a directory named `output` in the project directory using `mkdir output`.
 3. Type `python3 run_all.py` to the command line. 
-  - This command will run all inputs stored in the `input` directory using our solver in solver.py and write all output .out       files into `output` directory.
+  - This command will run all inputs stored in the `inputs` directory using our solver in solver.py and write all output .out       files into `output` directory.
