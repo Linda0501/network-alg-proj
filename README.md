@@ -9,7 +9,8 @@ Files:
 - `solver.py`: calls all other solvers and return the optimal output
 - `utils.py`: contains functions to compute cost and validate NetworkX graphs
 
-To run the solver:
-- cd into this project directory `network-alg-proj`
-- Create a directory named `output`.
-- Type `python3 run_all.py` to the command line. (This command will run all inputs stored in the `input` directory and write all output .out files into `output` directory.)
+Instructions to run the solver:
+1. cd into this project directory `network-alg-proj`
+2. Create a directory named `output`.
+3. Type `python3 run_all.py` to the command line. 
+  - This command will run all inputs stored in the `input` directory using our solver in solver.py and write all output .out       files into `output` directory.
