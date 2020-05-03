@@ -2,7 +2,7 @@ import networkx as nx
 from parse import read_input_file, write_output_file
 from utils import is_valid_network, average_pairwise_distance, average_pairwise_distance_fast
 import sys
-import solver_naive as solver_naive
+#import solver_naive as solver_naive
 import solver_greedy2 as solver_greedy1
 import solver_greedy2_more_edges as solver_greedy2
 import solver_trimMST as solver_mst
@@ -32,11 +32,13 @@ def solve(G):
 
     #if val is not None:
 
+    """
     tree_naive = solver_naive.solve(G)
     if (tree_naive is not None):
         if average_pairwise_distance_fast(tree_naive) < min_cost:
             min_cost = average_pairwise_distance_fast(tree_naive)
             min_tree = tree_naive
+    """
 
     tree_greedy1 = solver_greedy1.solve(G)
     if average_pairwise_distance_fast(tree_greedy1) < min_cost:

@@ -10,11 +10,11 @@ from utils import *
 """
 if __name__ == "__main__":
 
-	output_dir = "output_ds_spt"
-	cost_record = open("submission_meta/ds_spt_cost.txt", "a")
+	output_dir = "output_naive"
+	cost_record = open("submission_meta/naive.txt", "a")
 
 
-	for input_path in glob.glob('inputs/large*.in'):
+	for input_path in glob.glob('inputs/small*.in'):
 		graph_name = input_path.split("/")[1]
 		graph_name = graph_name.split(".")[0]
 
@@ -30,8 +30,8 @@ if __name__ == "__main__":
 		write_output_file(T, f"{output_dir}/{graph_name}.out")
 
 	cost_record.close()
-"""
 
+"""
 # run all inputs
 if __name__ == "__main__":
      output_dir = "output"
