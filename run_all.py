@@ -2,14 +2,14 @@ from parse import *
 import networkx as nx
 import os
 import solver_greedy as greedy
-import solver_greedy2 as solver
+import solver_greedy2_more_edges as solver
 import glob
 from utils import *
 
 # only run on s/m/l inputs
 if __name__ == "__main__":
-	output_dir = "output_greedy2"
-	cost_record = open("submission_meta/greedy2_cost.txt", "a")
+	output_dir = "output_greedy2_more_edges"
+	cost_record = open("submission_meta/greedy2_cost_more_edges.txt", "a")
 
 	for input_path in glob.glob('inputs/large*.in'):
 		graph_name = input_path.split("/")[1] 
