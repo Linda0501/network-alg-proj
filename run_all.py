@@ -17,7 +17,7 @@ from utils import *
 # 		print("processing {}".format(graph_name))
 
 # 		G = read_input_file(f"{input_path}")
-# 		T = mst.solve(G)
+# 		T = solver.solve(G)
 # 		assert is_valid_network(G, T), "output for {} is invalid".format(graph_name)
 
 # 		cost = average_pairwise_distance_fast(T)
