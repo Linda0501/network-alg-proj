@@ -9,7 +9,6 @@ Files:
 - `solver.py`: calls all other solvers and return the optimal output
 - `utils.py`: contains functions to compute cost and validate NetworkX graphs
 
-When writing inputs/outputs:
-- Make sure you use the functions `write_input_file` and `write_output_file` provided
-- Run the functions `read_input_file` and `read_output_file` to validate your files before submitting!
-  - These are the functions run by the autograder to validate submissions
+To run the solver:
+- Create a directory named `output`.
+- Type `python3 run_all.py` to the command line.
