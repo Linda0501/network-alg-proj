@@ -76,7 +76,7 @@ def greedy_find_min_tree(G, start_node):#n=2
 	"""
 	a greedy alg akin to prim's
 	"""
-	
+
 	tree = nx.Graph()
 	tree.add_node(start_node)
 	tree_nodes = [start_node]

@@ -2,10 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dafd5c31-9141-46c0-ae7f-c5fdaeab825c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/solver_ds_spt.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/submission_meta/ds_spt_cost.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/process_cost_data.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/process_cost_data.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run_all.py" beforeDir="false" afterPath="$PROJECT_DIR$/run_all.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/submission_meta/greedy2_cost.txt" beforeDir="false" afterPath="$PROJECT_DIR$/submission_meta/greedy2_cost.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solver_greedy2_more_edges.py" beforeDir="false" afterPath="$PROJECT_DIR$/solver_greedy2_more_edges.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_outputs.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/test_outputs.ipynb" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
