@@ -36,7 +36,16 @@ def solve(G):
 
     tree_greedy2 = solver_greedy2.solve(G)
     if average_pairwise_distance(tree_greedy2) < min_cost:
-        
+        min_cost = average_pairwise_distance(tree_greedy2)
+        min_tree = tree_greedy2
+
+    tree_mst = solver_mst.solve(G)
+    if average_pairwise_distance(tree_mst) < min_cost:
+        min_cost = average_pairwise_distance(tree_mst)
+        min_tree = tree_mst
+
+    tree_spt = solver_spt.solve(G)
+    if average_pairwise_distance(tree_spt) < min_cost:
 
 
 
